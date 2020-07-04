@@ -1,4 +1,5 @@
 # Extensions.Logging.NSubstitute
+[![Nuget](https://img.shields.io/nuget/v/Extensions.Logging.NSubstitute)](https://www.nuget.org/packages/Extensions.Logging.NSubstitute)
 Provides NSubstitute for `Microsoft.Extenstions.Logging.ILogger` that can be use with `.Received()`
 
 ## Usage

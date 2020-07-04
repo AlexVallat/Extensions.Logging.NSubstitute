@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <IsPackable>true</IsPackable>
+
+    <Authors>Alex Vallat</Authors>
+
+    <Description>Provides NSubstitute for Microsoft.Extenstions.Logging.ILogger that can be use with .Received()</Description>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <RepositoryUrl>https://github.com/AlexVallat/Extensions.Logging.NSubstitute</RepositoryUrl>
+
+    <RepositoryType>git</RepositoryType>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<PackageVersion>1.0.0-rc</PackageVersion>
+
+		<PackageTags>Microsoft.Extenstions.Logging.Abstractions, NSubstitute</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
+    <PackageReference Include="NSubstitute" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>
