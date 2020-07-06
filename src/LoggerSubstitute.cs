@@ -8,16 +8,16 @@ using EventId = Microsoft.Extensions.Logging.EventId;
 using NSubstitute.Core;
 using System.Linq;
 
-namespace TestCore
+namespace Extensions.Logging.NSubstitute
 {
-    public abstract class LoggerSubstitute : ILogger
-    {
-        public static LoggerSubstitute Instance => Substitute.ForPartsOf<LoggerSubstitute>();
+	public abstract class LoggerSubstitute : ILogger
+	{
+		public static LoggerSubstitute Create() => Substitute.ForPartsOf<LoggerSubstitute>();
 
-        void ILogger.Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
-        {
+		void ILogger.Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+		{
 			Log(logLevel, eventId, exception, formatter(state, exception));
-        }
+		}
 
 		public void LogDebug(EventId eventId, Exception exception, string message) => Log(LogLevel.Debug, eventId, exception, message);
 		public void LogDebug(EventId eventId, string message) => Log(LogLevel.Debug, eventId, message);
@@ -84,6 +84,6 @@ namespace TestCore
         */
 
 		public virtual bool IsEnabled(LogLevel logLevel) => true;
-        public abstract IDisposable BeginScope<TState>(TState state);
-    }
+		public abstract IDisposable BeginScope<TState>(TState state);
+	}
 }

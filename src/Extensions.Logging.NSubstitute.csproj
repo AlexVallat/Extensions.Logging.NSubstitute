@@ -17,7 +17,7 @@
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-		<PackageVersion>1.0.0-rc</PackageVersion>
+		<PackageVersion>1.0.0-rc2</PackageVersion>
 
 		<PackageTags>Microsoft.Extenstions.Logging.Abstractions, NSubstitute</PackageTags>
   </PropertyGroup>

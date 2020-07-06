@@ -1,12 +1,13 @@
 # Extensions.Logging.NSubstitute
 [![Nuget](https://img.shields.io/nuget/v/Extensions.Logging.NSubstitute)](https://www.nuget.org/packages/Extensions.Logging.NSubstitute)
+
 Provides NSubstitute for `Microsoft.Extenstions.Logging.ILogger` that can be use with `.Received()`
 
 ## Usage
-Instead of `Substitute.For<ILogger>()`, use `LoggerSubstitute.Instance`. This returns a Substitute which can be used in the normal NSubstitute way, for example:
+Instead of `Substitute.For<ILogger>()`, use `new LoggerSubstitute.Create()`. This returns a Substitute which can be used in the normal NSubstitute way, for example:
 
 ```c#
-var logger = LoggerSubstitute.Instance;
+var logger = LoggerSubstitute.Create();
 SomeMethodThatLogsAnError(logger);
 logger.Received().LogError("some message");
 ```
